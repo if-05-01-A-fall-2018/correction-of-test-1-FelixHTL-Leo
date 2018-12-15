@@ -1,0 +1,81 @@
+# Ich habe insgesamt 4 sachen auskommentiert wobei es zweimal dasselbe war und 1 sachen geändert.
+# Die überprüfung war richtig entgegen meiner Anahme und daher habe ich sie da gelassen
+
+"Enter first number:Secound one:Your points:"
+inc 12
+
+lit 0
+lit 19
+lit 20
+out 2
+
+la 0 32
+la 0 36
+in 0
+#sto   # die sto's waren das Problem da ist immer etwas durcheinander gekommen. Beschreibung oben´|`
+
+lit 19
+lit 12
+lit 13
+out 2
+
+la 0 40
+la 0 44
+in 0
+#sto   # die sto's waren das Problem da ist immer etwas durcheinander gekommen. Beschreibung oben´|`
+
+lv 0 32
+lit 6
+rel 5
+tjmp .end
+lv 0 40
+lit 6
+rel 5
+tjmp .end
+
+
+lv 0 32
+lv 0 40
+rel 2
+fjmp .notSame
+jmp .same   #tjmp zu jmp
+
+
+.notSame
+lv 0 32
+lv 0 40
+add
+#la 0 48  # unötiges speichern was wegen dem sto wieder etwas durcheinander gehaut hat. Beschreibung oben´|`
+#la 0 52
+#sto
+
+lit 31
+lit 12
+lit 13
+out 2
+lv 0 48
+out 0
+jmp .end
+
+
+.same
+lv 0 32
+lv 0 40
+add
+lit 2
+mul
+#la 0 48    # unötiges speichern was wegen dem sto wieder etwas durcheinander gehaut hat. Beschreibung oben´|`
+#la 0 52
+#sto
+
+lit 31
+lit 12
+lit 13
+out 2
+lv 0 48
+out 0
+jmp .end
+
+.end
+out 3
+halt
